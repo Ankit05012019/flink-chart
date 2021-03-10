@@ -1,0 +1,11 @@
+apiVersion: v2
+appVersion: 1.16.0
+dependencies:
+- condition: zookeeper.enabled
+  name: zookeeper
+  repository: https://charts.helm.sh/incubator
+  version: 2.0.0
+description: A Helm chart for Apache-Flink
+name: flink
+type: application
+version: 0.1.10
