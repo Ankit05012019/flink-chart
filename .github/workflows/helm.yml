@@ -12,8 +12,11 @@ jobs:
       - name: 'Deploy'
         uses: 'deliverybot/helm@master'
         with:
-          token: '${{ secrets.CR_TOKEN }}'
-          chart: 'apache-flink'
+           namespace: production
+           release: flink
+           value-files: './config/production.yml'
+           token: '${{ secrets.CR_TOKEN }}'
+           chart: 'apache-flink'
         
         env:
           KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
