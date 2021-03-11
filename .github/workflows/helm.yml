@@ -8,6 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: 'Deploy'
+        uses: 'deliverybot/helm@master'
+        with:
+          token: '${{ github.token }}'
+          chart: 'apache-flink'
+        
+        env:
+          KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
+        
       - name: Publish Helm charts
         uses: stefanprodan/helm-gh-pages@master
         with:
