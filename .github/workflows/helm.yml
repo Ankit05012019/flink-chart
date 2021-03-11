@@ -12,7 +12,7 @@ jobs:
       - name: 'Deploy'
         uses: 'deliverybot/helm@master'
         with:
-          token: '${{ github.token }}'
+          token: '${{ secrets.CR_TOKEN }}'
           chart: 'apache-flink'
         
         env:
