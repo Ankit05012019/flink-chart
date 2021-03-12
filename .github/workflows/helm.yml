@@ -20,7 +20,7 @@ jobs:
            helm: helm3
         
         env:
-           HELM_DEBUG=1
+           HELM_DEBUG: 1
            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
            KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
