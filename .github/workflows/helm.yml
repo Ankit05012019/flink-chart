@@ -16,7 +16,7 @@ jobs:
            release: flink
            value-files: './config/production.yml'
            token: '${{ secrets.CR_TOKEN }}'
-           chart: apache-flink
+           chart: 'charts/apache-flink'
            helm: helm3
         
         env:
