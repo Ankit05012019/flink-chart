@@ -17,6 +17,7 @@ jobs:
            value-files: './config/production.yml'
            token: '${{ secrets.CR_TOKEN }}'
            chart: 'apache-flink'
+           helm: helm3
         
         env:
            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
