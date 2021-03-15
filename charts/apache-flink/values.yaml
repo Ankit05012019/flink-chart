@@ -156,7 +156,7 @@ jobmanager:
     # blob port uses for Liveness probe
     blob: 6124
     ui: 8081
-  replicaCount: 2
+  replicaCount: 1
   # heapSize params for Jobmanager
   # keep in mind that Flink can use offheap memory
   # e.g. in case of checkpoint usage
