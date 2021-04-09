@@ -80,10 +80,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Publish Helm charts
-        uses: J12934/helm-gh-pages-action@master
+        uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          charts_dir: charts
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
    #     uses: stefanprodan/helm-gh-pages@master
    #     with:
    #       token: ${{ secrets.CR_TOKEN }}
