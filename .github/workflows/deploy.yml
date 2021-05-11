@@ -45,6 +45,7 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
+        id:  'deployonK8s'
         run: ct install
       
 #      - name: 'Deploy'
