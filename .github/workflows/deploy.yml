@@ -5,7 +5,6 @@ on:
     branches: 
       - master
   pull_request:
-    types: [closed]
     branches:
       - master
 
@@ -85,17 +84,3 @@ jobs:
                repo: context.repo.repo,
                body: output
                 })
-                
-  publish:
-    
-    needs: deploy 
-    
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Publish Helm charts
-        uses: stefanprodan/helm-gh-pages@master
-        with:
-          token: ${{ secrets.CR_TOKEN }}
-          charts_dir: charts

@@ -1,20 +1,19 @@
-name: Update Helm Repo
+name: Publish Helm Repo
 
-#on:
- # push:
- # pull_request:
- #   types: [closed]
- #   branches:
-#      - master
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
 
-#jobs:
-#  release:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
       
-#      - name: Publish Helm charts
-#        uses: J12934/helm-gh-pages-action@master
- #       with:
- #         token: ${{ secrets.CR_TOKEN }}
- #         charts_dir: charts
+      - name: Publish Helm charts
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.CR_TOKEN }}
+          charts_dir: charts
